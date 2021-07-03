@@ -24,12 +24,21 @@ const AutoComplete = (props) => {
 
     const getMovies = (searchText) => {
         let url = `http://www.omdbapi.com/?s=${searchText}&apikey=50314ef2`
-        // fetch(url).then((data) => data.json()).then((data) => {
-        //     let filteredSearchData = data.Search.splice(0,5);
-        //     setMovies(filteredSearchData);
-        // })
+        fetch(url).then((data) => data.json()).then((data) => {
+            if(data.Response === 'True') {
+                let filteredSearchData = data.Search.splice(0,5);
+                setMovies(filteredSearchData);
+            }
+            else {
+                alert(data.Error)
+            }
+        }).catch((e) => {
+            console.log(e)
+        })
     }
+    
     const debouncedGetMovies = useCallback(debounce((param) => {getMovies(param)}, 300), [])
+
     const handleMovieSearch = (e) => {
         let inputValue = e.target.value;
         setSearch(inputValue);
