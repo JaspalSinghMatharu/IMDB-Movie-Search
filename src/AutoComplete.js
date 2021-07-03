@@ -23,7 +23,7 @@ const AutoComplete = (props) => {
     }
 
     const getMovies = (searchText) => {
-        let url = `http://www.omdbapi.com/?s=${searchText}&apikey=50314ef2`
+        let url = `https://www.omdbapi.com/?s=${searchText}&apikey=50314ef2`
         fetch(url).then((data) => data.json()).then((data) => {
             if(data.Response === 'True') {
                 let filteredSearchData = data.Search.splice(0,5);
@@ -36,7 +36,7 @@ const AutoComplete = (props) => {
             console.log(e)
         })
     }
-    
+
     const debouncedGetMovies = useCallback(debounce((param) => {getMovies(param)}, 300), [])
 
     const handleMovieSearch = (e) => {
