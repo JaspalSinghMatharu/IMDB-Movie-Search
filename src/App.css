@@ -60,6 +60,7 @@ body {
   border: 1px solid #efefef;
   box-shadow: 0 0 4px 0 #efefef;
   background-color: #fff;
+  width: 100%;
 }
 
 .search-result__item {
