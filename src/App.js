@@ -3,8 +3,11 @@ import AutoComplete from './AutoComplete';
 
 function App() {
   return (
-    <div className="app">
-      <AutoComplete />
+    <div>
+      <h1 className="app-title">IMDB Movie Search App</h1> 
+      <div className="app">
+        <AutoComplete />
+      </div>
     </div>
   );
 }

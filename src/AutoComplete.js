@@ -6,6 +6,7 @@ const AutoComplete = (props) => {
     const [search, setSearch] = useState('');
     const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
+    const [error, setError] = useState(false)
 
 
     useEffect(() => {
@@ -26,11 +27,12 @@ const AutoComplete = (props) => {
         let url = `https://www.omdbapi.com/?s=${searchText}&apikey=50314ef2`
         fetch(url).then((data) => data.json()).then((data) => {
             if(data.Response === 'True') {
+                setError(false)
                 let filteredSearchData = data.Search.splice(0,5);
                 setMovies(filteredSearchData);
             }
             else {
-                alert(data.Error)
+                setError(true)
             }
         }).catch((e) => {
             console.log(e)
@@ -51,15 +53,16 @@ const AutoComplete = (props) => {
         <>
             <div className="autocomplete-wrapper">
                 <Input value={search} label="Enter movie name" placeholder="Type to search" id="autoComplete" handleChange={handleMovieSearch} />
-                {movies &&
+                {movies.length && !error ?
                     <ul className="search-results-list">
                         {movies.map((item) => {
                             return (
                                 <li data-movieId={item.imdbID} key={item.imdbID} className="search-result__item" onClick={handleMovieSelection}>{item.Title}</li>
                             )
                         })}
-                    </ul>
+                    </ul>: null
                 }
+                {error && <div className="search-error">Movie not found!</div>}  
             </div>
             {selectedMovie && 
                 <div className="movie-card-wrapper">
