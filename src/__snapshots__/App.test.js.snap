@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render AutoComplete component 1`] = `undefined`;
+
+exports[`render Input component 1`] = `undefined`;
+
+exports[`render Input component with label 1`] = `undefined`;
+
+exports[`renders learn react link 1`] = `undefined`;
