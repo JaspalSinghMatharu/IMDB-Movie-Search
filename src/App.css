@@ -1,11 +1,30 @@
 body {
-  background-color: #eec100;
+  background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/901370a7-ec10-4044-901c-82a189cc8036/d38rnod-2f6cb815-011d-47a8-bb9f-448c20f994c9.jpg/v1/fill/w_1172,h_682,q_70,strp/imdb_top_250_movie_poster_by_saxon1964_d38rnod-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzIwMCIsInBhdGgiOiJcL2ZcLzkwMTM3MGE3LWVjMTAtNDA0NC05MDFjLTgyYTE4OWNjODAzNlwvZDM4cm5vZC0yZjZjYjgxNS0wMTFkLTQ3YTgtYmI5Zi00NDhjMjBmOTk0YzkuanBnIiwid2lkdGgiOiI8PTU1MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.FcSQpnBlme8MsgOfMBtOUgWTDydsuIy1mPsgznkqdOw');
+  overflow: hidden;
+}
+
+body::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.95);
+  z-index: -1;
+}
+
+#root {
   padding: 20px;
+  overflow: scroll;
+  height: 100vh;
 }
 
 .app-title {
   text-align: center;
   margin-top: 40px;
+  color: #eec100;
 }
 
 .app {
@@ -83,6 +102,7 @@ body {
 
 .movie-card img {
   width: 100%;
+  height: 300px;
 }
 
 .movie-card {
@@ -107,4 +127,20 @@ body {
 
 .movie-title span {
   font-weight: 700;
+}
+
+@media only screen and (max-width:768px ) {
+  .app {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .app-title {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+
+  .movie-card {
+    width: 100%;
+  }
 }
