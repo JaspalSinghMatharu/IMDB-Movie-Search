@@ -24,7 +24,8 @@ Launches the test runner in the interactive watch mode.\
 
 
 ## Improvements that can be done in the project
- - UI can be improved and can be adapted using the IMDB yellow and black theme
+ - UI can be improved and can be adapted using the IMDB yellow and black theme.
+ - Cards can be centered and smaller in size
  - Currently only one movie is displayed at a time we can add pill for each movie selected and add the cards accordingly
  - The search query fetched basic data for the movie after selection we can fetch complete data of the movie using IMDB id of the movie this will help with more info of the movie but increase API calls
  - More test cases can be added and also test cases for seperate component can be added  (eg: /componenets/Input).
